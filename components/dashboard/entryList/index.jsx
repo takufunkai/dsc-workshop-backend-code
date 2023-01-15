@@ -69,30 +69,6 @@ const EntryList = () => {
        */
 
       // Insert your solution here.
-      const entriesToUpdate = changes.filter(
-        (change) => change.type === "modified"
-      );
-      if (entriesToUpdate) {
-        const entriesToUpdateIdContentMap = entriesToUpdate.reduce(
-          (map, change) => ({
-            ...map,
-            [`${change.doc.id}`]: change.doc.data().content,
-          }),
-          {}
-        );
-
-        setEntries((prev) =>
-          prev.map((currentEntry) => {
-            const updatedContent =
-              entriesToUpdateIdContentMap[`${currentEntry.id}`];
-            if (updatedContent) {
-              return { ...currentEntry, content: updatedContent };
-            } else {
-              return currentEntry;
-            }
-          })
-        );
-      }
     });
 
     return () => {

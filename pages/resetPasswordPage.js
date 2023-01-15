@@ -40,23 +40,7 @@ function signInPage() {
   	   * TODO: Complete this function by resetting the user's password here.
   	   * Documentation: https://firebase.google.com/docs/auth/web/manage-users
   	   */
-       if (data.newPassword != data.rekeyPassword) {
-         alert("New passwords do not match")
-         return
-       }
-
-       if (data.newPassword == "") {
-         alert("Please fill in a password")
-         return
-       }
-
-       updatePassword(user, data.newPassword).then(() => {
-         directToDashboard()
-       }).catch(error => {
-         console.log(error)
-         alert("Error while changing password")
-         return
-       })
+      // Insert solution here
     }).catch(error => {
       console.log(error)
       alert("User credentials incorrect")
